@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
-export default class Player extends Component {
+import {connect} from  'react-redux';
+class Player extends Component {
   render() {
+    console.log('props',this.props.mangDatCuoc)
     return (
       <div className="playerGame text-center">
         <div className="theThink">
@@ -18,32 +19,30 @@ export default class Player extends Component {
           alt="./img/gameOanTuTi/player.png"
         />
         <div className="row">
-          <div className="col-4">
+          {/* render trên giao diện  */}
+          {this.props.mangDatCuoc.map((item,index)=>{
+            return <div className="col-4">
             <button className="btnItem">
               <img style={{width:'35px', height:'35px'}}
-                src="./img/gameOanTuTi/bao.png"
+                src={item.hinhAnh}
                 alt="./img/gameOanTuTi/bao.png"
               />
             </button>
           </div>
-          <div className="col-4">
-            <button className="btnItem">
-              <img style={{width:'35px', height:'35px'}}
-                src="./img/gameOanTuTi/bua.png"
-                alt="./img/gameOanTuTi/bua.png"
-              />
-            </button>
-          </div>
-          <div className="col-4">
-            <button className="btnItem">
-              <img style={{width:'35px', height:'35px'}}
-                src="./img/gameOanTuTi/keo.png"
-                alt="./img/gameOanTuTi/keo.png"
-              />
-            </button>
-          </div>
+          })}
         </div>
       </div>
     );
   }
 }
+
+// biến state bên Reducer thành props chuyền vào component
+const mapStateToProps = state => {
+  return {
+    mangDatCuoc: state.BaiTapOanTuXiReducer.mangDatCuoc
+  }
+}
+
+
+// kết nối redux store
+export default connect (mapStateToProps) (Player)
