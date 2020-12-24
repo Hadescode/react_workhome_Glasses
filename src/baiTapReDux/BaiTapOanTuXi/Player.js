@@ -8,8 +8,8 @@ class Player extends Component {
         <div className="theThink">
         <img className="mt-4"
             style={{ width: "50px", height: "50px", }}
-            src="./img/gameOanTuTi/bua.png"
-            alt="./img/gameOanTuTi/bua.png"
+            src={this.props.mangDatCuoc.find(item => item.datCuoc === true).hinhAnh}
+            alt={this.props.mangDatCuoc.find(item => item.datCuoc === true).hinhAnh}
           />
         </div>
         <div className="speech-bubble"></div>
@@ -21,8 +21,17 @@ class Player extends Component {
         <div className="row">
           {/* render trên giao diện  */}
           {this.props.mangDatCuoc.map((item,index)=>{
+
+            // Xét giá trị đặc cược thêm viền cho item được chọn
+
+            let border = {};
+            if(item.datCuoc){
+              border = {border:'3px solid orange'};
+            }
+
+
             return <div className="col-4">
-            <button className="btnItem">
+            <button style={border} className="btnItem">
               <img style={{width:'35px', height:'35px'}}
                 src={item.hinhAnh}
                 alt="./img/gameOanTuTi/bao.png"

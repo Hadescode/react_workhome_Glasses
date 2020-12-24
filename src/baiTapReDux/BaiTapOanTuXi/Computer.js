@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-
-export default class Computer extends Component {
+import { connect} from 'react-redux'
+ class Computer extends Component {
   render() {
     return (
       <div className="playerGame text-center">
         <div className="theThink">
           <img className="mt-4"
             style={{ width: "50px", height: "50px",transform:'rotate(180deg)'}}
-            src="./img/gameOanTuTi/keo.png"
-            alt="./img/gameOanTuTi/keo.png"
+            src={this.props.computer.hinhAnh}
+            alt={this.props.computer.hinhAnh}
           />
         </div>
         <div className="speech-bubble"></div>
@@ -20,4 +20,16 @@ export default class Computer extends Component {
       </div>
     );
   }
+} 
+
+
+//lấy các state từ REDUCER về để binding dữ liệu hehe
+const mapStateToProps = state => {
+  return{
+    computer: state.BaiTapOanTuXiReducer.computer
+  }
 }
+
+
+//kết nối với redux store
+export default connect (mapStateToProps) (Computer)

@@ -5,13 +5,13 @@ const stateDefault = {
         {
             ma:'keo',
             hinhAnh:'./img/gameOanTuTi/keo.png',
-            datCuoc:true
+            datCuoc:false
         },
         
         {
             ma:'bua',
             hinhAnh:'./img/gameOanTuTi/bua.png',
-            datCuoc:false
+            datCuoc:true
         },
         
         {
@@ -21,10 +21,10 @@ const stateDefault = {
         }
     ],
 
-    ketQua: "I love You Nguyễn Thị Thanh Thúy, I love U 3000",// kiểu chuỗi
+    ketQua: "34 + 35, I love U 3000",// kiểu chuỗi
     soBanThang:0,
     soBanChoi:0,
-    computer:{ma:'keo', hinhAnh:'./img/gameOanTuTi/keo.png'}, // để mặc định
+    computer:{ma:'keo', hinhAnh:'./img/gameOanTuTi/bua.png'}, // để mặc định
 }
 // có hai tham số {1: state mặc đinh ban đầu / 2: action}
 const BaiTapOanTuXiReducer = (state = stateDefault, action) => {
