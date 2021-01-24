@@ -21,17 +21,14 @@ class Player extends Component {
         <div className="row">
           {/* render trên giao diện  */}
           {this.props.mangDatCuoc.map((item,index)=>{
-
             // Xét giá trị đặc cược thêm viền cho item được chọn
-
             let border = {};
             if(item.datCuoc){
               border = {border:'3px solid orange'};
             }
 
-
             return <div className="col-4">
-            <button style={border} className="btnItem">
+            <button onClick={() =>{this.props.datCuoc(item.ma);}} style={border} className="btnItem">
               <img style={{width:'35px', height:'35px'}}
                 src={item.hinhAnh}
                 alt="./img/gameOanTuTi/bao.png"
@@ -52,6 +49,19 @@ const mapStateToProps = state => {
   }
 }
 
+// Dưa dữ liệu lên redux và cập nhật lại state
+const mapDispatchToProps = dispatch => {
+  return{
+    datCuoc: (maCuoc) =>{
+      dispatch({
+        type: 'CHON_KEO_BUA_BAO',
+        maCuoc
+      })
+    }
+  }
+}
+
+
 
 // kết nối redux store
-export default connect (mapStateToProps) (Player)
+export default connect (mapStateToProps,mapDispatchToProps) (Player)
