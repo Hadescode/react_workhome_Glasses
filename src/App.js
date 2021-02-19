@@ -8,8 +8,8 @@ import BaiTapGlasses from './BaiTapThuKinhStateProps/BaiTapGlasses';
 function App() {
   return (
     <div className="App">
-      {/* <BaiTapGlasses/> */}
-      <BaiTapOanTuXi/>
+      <BaiTapGlasses/>
+      {/* <BaiTapOanTuXi/> */}
     </div>
   );
 }
