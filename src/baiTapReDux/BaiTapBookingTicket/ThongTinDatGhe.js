@@ -8,7 +8,7 @@ export default class ThongTinDatGhe extends Component {
           <button className="gheDuocChon"></button>
           <span
             className="text-light"
-            style={{ fontSize: "30px", marginLeft: "10px" }}
+            style={{ fontSize: "25px", marginLeft: "10px" }}
           >
             Ghế đã đặt
           </span>
@@ -31,9 +31,9 @@ export default class ThongTinDatGhe extends Component {
             Ghế chưa đặt
           </span>
         </div>
-        <table className="table mt-2" border="3">
+        <table className="table mt-2" border="3" style={{borderColor:"white"}}>
           <thead>
-            <tr className="text-light" style={{fontSize:25}}>
+            <tr className="text-light" style={{fontSize:20}}>
               <th>Số ghế</th>
               <th>Giá</th>
               <th>Hủy</th>
@@ -41,13 +41,13 @@ export default class ThongTinDatGhe extends Component {
           </thead>
           <tbody>
             <tr className="text-light">
-              <th>Số ghế</th>
-              <th>Giá</th>
+              <th></th>
+              <th></th>
               <th></th>
             </tr>
             <tr className="text-light">
-              <th>Số ghế</th>
-              <th>Giá</th>
+              <th></th>
+              <th></th>
               <th></th>
             </tr>
           </tbody>

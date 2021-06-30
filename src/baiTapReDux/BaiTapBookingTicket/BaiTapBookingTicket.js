@@ -8,8 +8,8 @@ export default class BaiTapBookingTicket extends Component {
   renderHangGhe = () => {
     return danhSachGhe.map((hangGhe, index) => {
       return (
-        <div key={index}>
-          <HangGhe hangGhe={hangGhe} />
+        <div key={index} >
+          <HangGhe hangGhe={hangGhe} soHangGhe={index}/>
         </div>
       );
     });
@@ -39,7 +39,7 @@ export default class BaiTapBookingTicket extends Component {
           <div className="row">
             <div className="col-8 text-center">
               <div style={{ fontSize: "35px" }} className="text-warning">
-                Đặt Vé Xem Phim JAV 18+
+                Đặt Vé Xem Phim Rạp LOTTE CINEMA
               </div>
               <div className="mt-2 text-light" style={{ fontSize: "20px" }}>
                 Màn Hình
@@ -48,13 +48,14 @@ export default class BaiTapBookingTicket extends Component {
                 className="mt-1"
                 style={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: "column",
                   justifyContent: "center",
                 }}
               >
-                <div className="screen"></div>
+                <div className="screen container"></div>
+                {this.renderHangGhe()}
               </div>
-              {this.renderHangGhe()}
+            
             </div>
             <div className="col-4">
               <h1
