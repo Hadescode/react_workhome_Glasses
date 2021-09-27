@@ -58,10 +58,7 @@ export default class BaiTapBookingTicket extends Component {
             
             </div>
             <div className="col-4">
-              <h1
-                style={{ fontSize: "35px", textAlign: "center" }}
-                className="text-warning display-4"
-              >
+              <h1 style={{ fontSize: "35px", textAlign: "center" }} className="text-warning display-4">
                 Danh Sách Ghế Bạn Chọn
               </h1>
               <ThongTinDatGhe />
